@@ -1,0 +1,71 @@
+.carousel {
+    position: relative;
+    height: 451px;
+    width: 802px;
+    overflow: hidden;
+    border-radius: 20px;
+    text-align: center;
+
+    &__btn {
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        font-size: 15px;
+        transform: translateY(-255px);
+        float: right;
+        transition: ease-in-out 1.5s;
+        .MuiSvgIcon-colorPrimary {
+            color: $clr-gray150;
+        }
+
+        .MuiSvgIcon-fontSizeLarge {
+            font-size: 40px;
+        }
+
+        &:hover {
+            animation: bounce 2s infinite;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+    &__title {
+        transform: translateY(-163px);
+        text-align: center;
+        color: white;
+        font-size: 53px;
+        font-weight: 350;
+    }
+}
+.prev {
+    float: left;
+}
+
+@media all and (max-width: 600px) {
+    .carousel {
+        width: 370px;
+        height: 364px;
+
+        &__title {
+            transform: translateY(-126px);
+        }
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: (translate(0, -255px));
+    }
+    40% {
+        transform: (translate(-10px, -255px));
+    }
+    60% {
+        transform: (translate(-5px, -255px));
+    }
+}
