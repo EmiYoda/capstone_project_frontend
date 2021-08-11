@@ -58,7 +58,7 @@
 @media all and (max-width: 600px) {
     .profile {
         &__btn {
-            transform: translate(613px, 33px);
+            transform: translate(119px, 33px);
         }
 
         &__post {
@@ -66,17 +66,17 @@
         }
 
         &__grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: none;
         }
     }
 
     .title {
-        transform: translate(1px, 18px);
+        transform: translate(13px, 18px);
         text-align: center;
     }
 
     .title-2 {
-        transform: translate(1px, 38px);
+        transform: translate(11px, 22px);
         text-align: center;
     }
 }
