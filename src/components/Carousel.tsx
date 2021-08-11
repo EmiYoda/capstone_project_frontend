@@ -30,13 +30,6 @@ const Carousel = ({ posts, setWidth, xPosition, handleClickPrev, handleClicknext
             const width = slideRef.current.clientWidth;
             setWidth(width);
         }
-
-        if (window.matchMedia("(min-width: 1008px)")) {
-            console.log("bruh")
-        } else {
-            console.log("nice")
-        }
-
     }, [setWidth]);
 
     return (

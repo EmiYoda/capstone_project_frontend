@@ -43,14 +43,10 @@ const NewPost = () => {
                 setSecretAuthor(decodedToken.email)
                 post.author = author
                 post.secretAuthor = secretAuthor
-                console.log(author)
-                console.log(secretAuthor)
             }
         }
 
         decodeUser()
-
-        console.log("Hello")
     }, [slug, token, author, secretAuthor, post]);
 
 
@@ -71,9 +67,6 @@ const NewPost = () => {
 
     const onSubmit = async (e: any) => {
         e.preventDefault();
-
-        console.log(post.author)
-        console.log(author)
         if (document.cookie.replace('token=', '') !== '' || null || undefined) {
             if (editing) {
                 try {

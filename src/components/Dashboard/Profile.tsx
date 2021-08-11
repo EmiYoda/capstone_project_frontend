@@ -17,9 +17,6 @@ const Profile = () => {
                 const decodedToken = await jwt_decode<any>(token);
                 setUser(decodedToken.name)
                 setEmailUser(decodedToken.email);
-
-                console.log(emailUser)
-                console.log(user)
             }
         }
 

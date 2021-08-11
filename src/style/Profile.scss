@@ -55,6 +55,32 @@
     }
 }
 
+@media all and (max-width: 600px) {
+    .profile {
+        &__btn {
+            transform: translate(613px, 33px);
+        }
+
+        &__post {
+            width: 328px;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .title {
+        transform: translate(1px, 18px);
+        text-align: center;
+    }
+
+    .title-2 {
+        transform: translate(1px, 38px);
+        text-align: center;
+    }
+}
+
 .title {
     transform: translate(23px, 18px);
 }

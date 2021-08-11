@@ -23,9 +23,6 @@ const App = () => {
 
 
   const handleClicknext = () => {
-    console.log(xPosition)
-    console.log(index)
-    console.log(width)
     if (index === posts.length - 1) {
       setIndex(0);
       setXPosition(0);
