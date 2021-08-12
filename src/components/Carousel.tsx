@@ -30,12 +30,6 @@ const Carousel = ({ posts, setWidth, xPosition, handleClickPrev, handleClicknext
             const width = slideRef.current.clientWidth;
             setWidth(width);
         }
-
-        posts.map((post: any) => {
-            if (post.image === '' || undefined || null) {
-                return (<ScaleLoader loading={true} color={"#0A748B"} />)
-            }
-        })
     }, [setWidth]);
 
     return (
