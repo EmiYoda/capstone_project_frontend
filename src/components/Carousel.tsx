@@ -34,8 +34,6 @@ const Carousel = ({ posts, setWidth, xPosition, handleClickPrev, handleClicknext
         posts.map((post: any) => {
             if (post.image === '' || undefined || null) {
                 return (<ScaleLoader loading={true} color={"#0A748B"} />)
-            } else {
-                null
             }
         })
     }, [setWidth]);
