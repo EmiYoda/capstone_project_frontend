@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ArrowBackIosRounded } from "@material-ui/icons"
 import { ArrowForwardIosRounded } from "@material-ui/icons"
 import { useHistory } from 'react-router-dom';
-
+import ScaleLoader from 'react-spinners/ScaleLoader';
 interface ITranslate {
     xPosition: Number
 }
@@ -30,6 +30,14 @@ const Carousel = ({ posts, setWidth, xPosition, handleClickPrev, handleClicknext
             const width = slideRef.current.clientWidth;
             setWidth(width);
         }
+
+        posts.map((post: any) => {
+            if (post.image === '' || undefined || null) {
+                return (<ScaleLoader loading={true} color={"#0A748B"} />)
+            } else {
+                null
+            }
+        })
     }, [setWidth]);
 
     return (
