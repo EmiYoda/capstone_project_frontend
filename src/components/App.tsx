@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="app__links">
-        <Link to="/dashboard" className="app__link"> DashBoard </Link>
+        {document.cookie.replace('token=', '') === '' || null || undefined ? <Link to="/dashboard" className="app__link">Dashboard</Link> : <Link to="/auth" className="app__link">Log In / Register</Link>}
         <Link to="/new/post" className="app__link"> Create New Post </Link>
       </div>
       <Carousel
