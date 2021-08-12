@@ -38,7 +38,7 @@ const Auth = (props: any) => {
             setToken(call.data.token);
             const expires = (new Date(Date.now() + 86400 * 1000)).toUTCString();
             document.cookie = `token=${token}; secure=true; samesite=lax; max-age=${expires + 86400}; http-only=true`;
-            window.location.reload;
+            window.location.reload()
         } catch (error) {
             console.log(error)
         }
