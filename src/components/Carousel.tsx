@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ArrowBackIosRounded } from "@material-ui/icons"
 import { ArrowForwardIosRounded } from "@material-ui/icons"
 import { useHistory } from 'react-router-dom';
-import ScaleLoader from 'react-spinners/ScaleLoader';
 interface ITranslate {
     xPosition: Number
 }
