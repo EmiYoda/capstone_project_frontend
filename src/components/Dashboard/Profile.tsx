@@ -81,7 +81,7 @@ const Profile = () => {
             <h2 className="title-2">{emailUser}</h2>
 
             {
-                token ? <button className="profile__btn" onClick={logout}>Log Out</button> : <button className="profile__btn__cntr" onClick={() => history.push('/auth')}>Log In / Register</button>
+                token ? <button className="profile__btn" onClick={logout}>Log Out</button> : <button className="profile__btn" onClick={() => history.push('/auth')}>Log In / Register</button>
             }
             <div className="posts__grid">
 
