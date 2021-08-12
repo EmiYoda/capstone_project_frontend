@@ -12,7 +12,8 @@ import Post from './components/Uploads/Post';
 function main() {
   ReactDOM.render(
     <BrowserRouter>
-      <Route path="/" exact component={document.cookie.replace('token=', '') !== '' || null || undefined ? App : Auth} />
+      <Route path="/" exact component={App} />
+      <Route path="/auth" exact component={Auth} />
       <Route path="/dashboard" exact component={Profile} />
       <Route path="/edit/:slug" exact component={NewPost} />
       <Route path="/new/post" exact component={NewPost} />
