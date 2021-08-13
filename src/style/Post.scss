@@ -176,3 +176,17 @@
         }
     }
 }
+
+@media all and (max-width: 320px) {
+    .post {
+        &__content {
+            &__img {
+                width: 318px;
+            }
+
+            &__btn {
+                margin: -1px;
+            }
+        }
+    }
+}

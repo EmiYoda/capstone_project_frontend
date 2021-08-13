@@ -34,12 +34,11 @@ const Carousel = ({ posts, setWidth, xPosition, handleClickPrev, handleClicknext
     return (
         <div className="wrapper">
             <h1 className="carousel__title">Photo DB</h1>
-            <div className="carousel">
+            <div className={window.matchMedia("(width: 768px)").matches ? "carousel__ipad" : "carousel"}>
                 <Slide xPosition={xPosition} ref={slideRef}>
                     {posts.map((post: any, i: any) => (
                         <>
-                            {window.matchMedia("(min-width: 1008px)").matches ? <img style={{ transform: 'translateX(0px)', width: '100%' }} onClick={() => history.push(`/post/${post.slug}`)} src={post.image} alt="a" key={i} /> : <img style={{ height: "363px" }} onClick={() => history.push(`/post/${post.slug}`)} src={post.image} alt="a" key={i} />}
-
+                            {window.matchMedia("(min-width: 1008px)").matches ? <img style={{ transform: 'translateX(0px)', minWidth: '802px', maxWidth: '802px' }} onClick={() => history.push(`/post/${post.slug}`)} src={post.image} alt="a" key={i} /> : window.matchMedia("(max-width: 640px)").matches ? <img style={{ minWidth: '370px', maxWidth: '370px', height: "365px" }} onClick={() => history.push(`/post/${post.slug}`)} src={post.image} alt="a" key={i} /> : window.matchMedia("(max-width: 768px)").matches ? <img style={{ minWidth: '638px', maxWidth: '638px', height: "365px" }} onClick={() => history.push(`/post/${post.slug}`)} src={post.image} alt="a" key={i} /> : <img style={{ minWidth: '150px', maxWidth: '150px', height: "365px" }} onClick={() => history.push(`/post/${post.slug}`)} src={post.image} alt="a" key={i} />}
                         </>
                     ))}
 

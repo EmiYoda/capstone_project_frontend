@@ -68,6 +68,7 @@ const Profile = () => {
         try {
             document.cookie = `token= ; expires= expires=Thu, 01 Jan 1970 00:00:00 UTC;`
             history.push('/auth');
+            window.location.reload()
 
         } catch (error) {
             console.log(error);
@@ -81,9 +82,9 @@ const Profile = () => {
             <h2 className="title-2">{emailUser}</h2>
 
             {
-                token ? <button className="profile__btn" onClick={logout}>Log Out</button> : <button className="profile__btn_crt" onClick={() => history.push('/auth')}>Log In / Register</button>
+                token ? <button className={window.matchMedia("(max-width: 1447px)").matches ? "profile__btn__lrg" : window.matchMedia("(max-width: 768px)").matches ? "profile__btn" : "profile__btn"} onClick={logout}>Log Out</button> : <button className="profile__btn_crt" onClick={() => history.push('/auth')}>Log In / Register</button>
             }
-            <div className="posts__grid">
+            <div className={window.matchMedia("(max-width: 768px)").matches ? "posts__grid__sm" : window.matchMedia("(max-width: 1448px)").matches ? "posts__grid__md" : "posts__grid"}>
 
                 {renderPost()}
             </div>

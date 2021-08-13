@@ -38,7 +38,9 @@ const Auth = (props: any) => {
             setToken(call.data.token);
             const expires = (new Date(Date.now() + 86400 * 1000)).toUTCString();
             document.cookie = `token=${token}; secure=true; samesite=lax; max-age=${expires + 86400}; http-only=true`;
-            window.location.reload()
+
+            alert("User Created Please Login")
+            window.location.reload();
         } catch (error) {
             console.log(error)
         }
@@ -79,6 +81,7 @@ const Auth = (props: any) => {
                                 <input
                                     type="email" required autoComplete="false"
                                     onChange={(e) => setRegisterEmail(e.target.value)}
+                                    id="registerInput"
                                 />
                                 <label>Email</label>
                             </div>
@@ -86,6 +89,7 @@ const Auth = (props: any) => {
                                 <input
                                     type="password" required autoComplete="false"
                                     onChange={(e) => setRegisterPassword(e.target.value)}
+                                    id="registerInput"
                                 />
                                 <label>Password</label>
                             </div>
@@ -93,6 +97,7 @@ const Auth = (props: any) => {
                                 <input
                                     type="text" required autoComplete="false"
                                     onChange={(e) => setRegisterName(e.target.value)}
+                                    id="registerInput"
                                 />
                                 <label>Name</label>
                             </div>

@@ -51,7 +51,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    &__links {
+        transform: translateY(19px);
+    }
     &__link {
         flex: 1 1 auto;
         margin: 30px;
@@ -85,7 +87,15 @@ body {
 @media all and (max-width: 600px) {
     .app {
         &__link {
-            margin: 21px;
+            margin: 18px;
+        }
+    }
+}
+
+@media all and (max-width: 320px) {
+    .app {
+        &__link {
+            margin: 5px;
         }
     }
 }
