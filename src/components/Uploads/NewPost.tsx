@@ -28,7 +28,6 @@ const NewPost = () => {
             getArticleBySlug(slug);
             setEditing(true);
         }
-
         // if (token !== "" || null || undefined) {}
 
         if (author !== "" || null || undefined) {
@@ -80,7 +79,7 @@ const NewPost = () => {
                     await axios.post("https://photodb-backend-capstone.herokuapp.com/api/new/post", post);
                     history.push("/");
                 } catch (err) {
-                    console.log({ error: err });
+                    console.log(err)
                 }
             }
         }
@@ -108,7 +107,6 @@ const NewPost = () => {
                     <input
                         type="text"
                         required={editing ? false : true}
-                        placeholder="Title"
                         name="title"
                         value={post.title}
                         onChange={changeHandler}
@@ -141,7 +139,8 @@ const NewPost = () => {
                         alert("the inputs that are empty will lose the data")
                         history.goBack()
                     }}>Back</button>
-                    <button className="newPost__form__btn" type="submit">{editing ? "Edit" : "Create"}</button>
+                    <button className="newPost__form__btn" onClick={() => alert("if not redirected change title please")
+                    } type="submit">{editing ? "Edit" : "Create"}</button>
                 </div>
             </form> : <Link to="/auth">Login or Register</Link>}
         </div>
