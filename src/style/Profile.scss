@@ -6,9 +6,8 @@
 
     &__posts {
         border-radius: 5px;
-        box-shadow: 0 2px 15px 0 rgb(0, 0, 9%);
+        // box-shadow: 0 2px 15px 0 rgb(0, 0, 9%);
         padding: 21px;
-        margin: 32px;
     }
 
     &__post {
@@ -24,6 +23,7 @@
             width: 100%;
             height: 284px;
             margin-bottom: 25px;
+            border-radius: 25px;
         }
     }
 
@@ -40,7 +40,30 @@
         color: #fff;
         transition: 0.3s;
         width: 150px;
-        // transform: translate(1188px, -33px);
+        &__lrg {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #f7f7f7;
+            background-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            transition: 0.3s;
+            width: 150px;
+
+            &:hover {
+                cursor: pointer;
+                border-radius: 30px;
+            }
+
+            &:active {
+                color: #03e9f4;
+                border: 2px solid #03e9f4;
+                border-radius: 30px;
+            }
+        }
 
         &:hover {
             cursor: pointer;
@@ -55,62 +78,36 @@
     }
 }
 
-@media all and (max-width: 768px) {
-    .profile {
-        &__btn {
-            transform: translate(119px, 33px);
-        }
+// @media all and (max-width: 768px) {
+//     .profile {
+//         &__btn {
+//             transform: translate(119px, 33px);
+//         }
 
-        &__post {
-            width: 328px;
-        }
+//         &__post {
+//             width: 328px;
+//         }
 
-        &__grid {
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-    }
+//         &__grid {
+//             display: grid;
+//             grid-template-columns: 1fr;
+//         }
+//     }
 
-    .title {
-        transform: translate(13px, 18px);
-        text-align: center;
-    }
+//     .title {
+//         transform: translate(13px, 18px);
+//         text-align: center;
+//     }
 
-    .title-2 {
-        transform: translate(11px, 22px);
-        text-align: center;
-    }
-}
+//     .title-2 {
+//         transform: translate(11px, 22px);
+//         text-align: center;
+//     }
+// }
 
 @media all and (max-width: 1444px) {
     .profile {
         &__btn {
-            &__lrg {
-                transform: translate(338px, 33px);
-
-                margin: 10px;
-                padding: 20px;
-                border: 2px solid #f7f7f7;
-                background-color: transparent;
-                text-align: center;
-                text-transform: uppercase;
-                position: relative;
-                overflow: hidden;
-                color: #fff;
-                transition: 0.3s;
-                width: 150px;
-
-                &:hover {
-                    cursor: pointer;
-                    border-radius: 30px;
-                }
-
-                &:active {
-                    color: #03e9f4;
-                    border: 2px solid #03e9f4;
-                    border-radius: 30px;
-                }
-            }
         }
 
         &__post {
@@ -124,29 +121,35 @@
     }
 
     .title {
-        transform: translate(13px, 18px);
         text-align: center;
     }
 
     .title-2 {
-        transform: translate(11px, 22px);
+        transform: translate(9px, 22px);
         text-align: center;
     }
-    .posts__grid__md {
+}
+@media all and (max-width: 375px) {
+    .profile {
+        &__btn {
+            transform: translate(86px, 33px);
+        }
+    }
+    .posts__grid__sm {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
-
 @media all and (max-width: 320px) {
     .profile {
         &__btn {
-            transform: translate(111px, 33px);
+            transform: translate(56px, 33px);
         }
         &__post {
-            width: 320px;
+            width: 260px;
 
             &__img {
+                transform: translateX(-20px);
                 width: 300px;
             }
         }
@@ -155,8 +158,35 @@
     .posts__grid__sm {
         display: grid;
         grid-template-columns: 1fr;
+        transform: translate(10px, 10px);
     }
 }
+
+@media all and (max-width: 425px) {
+    .profile {
+        &__btn {
+            transform: translate(86px, 33px);
+        }
+    }
+
+    .title {
+        transform: translate(16px, 18px);
+    }
+}
+
+@media all and (min-width: 768px) {
+    .profile {
+        &__btn {
+            transform: translate(267px, 33px);
+        }
+    }
+
+    .posts__grid__md {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .posts__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

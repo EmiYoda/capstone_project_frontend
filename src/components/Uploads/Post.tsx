@@ -96,6 +96,7 @@ const Post = () => {
             <h3 className="post__content">{"Author : " + post.author}</h3>
             <hr />
             {renderMarkdown()}
+            <button className="post__content__btn" onClick={() => history.push('/')}>Back</button>
             {post.secretAuthor === user ? adminPost(post._id) : null}
         </div>
     )

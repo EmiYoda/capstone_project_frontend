@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory, useParams, Link } from "react-router-dom";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import jwt_decode from 'jwt-decode';
+import { ContactSupportOutlined } from '@material-ui/icons';
 
 const NewPost = () => {
     const history = useHistory();
@@ -53,7 +54,6 @@ const NewPost = () => {
     const getArticleBySlug = async (slug: any) => {
         try {
             const res = await axios.get(`https://photodb-backend-capstone.herokuapp.com/api/post/${slug}`);
-            setPost(res.data);
             setId(res.data._id);
         } catch (err) {
             console.log({ error: err });
@@ -137,7 +137,10 @@ const NewPost = () => {
                 </div>
 
                 <div>
-                    <button className="newPost__form__btn" onClick={() => history.goBack()}>Back</button>
+                    <button className="newPost__form__btn" onClick={() => {
+                        alert("the inputs that are empty will lose the data")
+                        history.goBack()
+                    }}>Back</button>
                     <button className="newPost__form__btn" type="submit">{editing ? "Edit" : "Create"}</button>
                 </div>
             </form> : <Link to="/auth">Login or Register</Link>}

@@ -102,7 +102,7 @@ const Auth = (props: any) => {
                                 <label>Name</label>
                             </div>
 
-
+                            <button className="auth__form__btn" onClick={() => history.goBack()}>Back</button>
                             <button className="auth__form__btn" onClick={register}>Register</button>
                         </div>
 
@@ -130,6 +130,7 @@ const Auth = (props: any) => {
                                 />
                                 <label>Name</label>
                             </div>
+                            <button className="auth__form__btn" onClick={() => history.push('/')}>Back</button>
                             <button className="auth__form__btn" onClick={login}>Login</button>
                         </div>
                 }

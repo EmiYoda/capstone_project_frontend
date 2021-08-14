@@ -82,9 +82,10 @@ const Profile = () => {
             <h2 className="title-2">{emailUser}</h2>
 
             {
-                token ? <button className={window.matchMedia("(max-width: 1447px)").matches ? "profile__btn__lrg" : window.matchMedia("(max-width: 768px)").matches ? "profile__btn" : "profile__btn"} onClick={logout}>Log Out</button> : <button className="profile__btn_crt" onClick={() => history.push('/auth')}>Log In / Register</button>
+                token ? <button className={window.matchMedia("(min-width: 1447px)").matches ? "profile__btn__lrg" : window.matchMedia("(max-width: 768px)").matches ? "profile__btn" : "profile__btn"} onClick={logout}>Log Out</button> : <button className="profile__btn_crt" onClick={() => history.push('/auth')}>Log In / Register</button>
             }
-            <div className={window.matchMedia("(max-width: 768px)").matches ? "posts__grid__sm" : window.matchMedia("(max-width: 1448px)").matches ? "posts__grid__md" : "posts__grid"}>
+            <button className={window.matchMedia("(min-width: 1447px)").matches ? "profile__btn__lrg" : window.matchMedia("(max-width: 768px)").matches ? "profile__btn" : "profile__btn"} onClick={() => history.push('/')}>Back</button>
+            <div className={window.matchMedia("(max-width: 375px)").matches ? "posts__grid__sm" : window.matchMedia("(max-width: 425px)").matches ? "posts__grid__sm" : window.matchMedia("(min-width: 768px)").matches ? "posts__grid__md" : "posts__grid"}>
 
                 {renderPost()}
             </div>
