@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory, useParams, Link } from "react-router-dom";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import jwt_decode from 'jwt-decode';
-import { ContactSupportOutlined } from '@material-ui/icons';
+
 
 const NewPost = () => {
     const history = useHistory();
