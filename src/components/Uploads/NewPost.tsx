@@ -107,6 +107,7 @@ const NewPost = () => {
                     <input
                         type="text"
                         required={editing ? false : true}
+                        placeholder="Title"
                         name="title"
                         value={post.title}
                         onChange={changeHandler}
