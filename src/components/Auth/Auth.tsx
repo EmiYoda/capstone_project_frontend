@@ -42,6 +42,7 @@ const Auth = (props: any) => {
             alert("User Created Please Login")
             window.location.reload();
         } catch (error) {
+            alert("user alredy exists")
             console.log(error)
         }
     }
