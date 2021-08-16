@@ -81,7 +81,7 @@ const Auth = (props: any) => {
                             <div className="auth__form__input">
                                 <input
                                     type="email" required
-                                    autoComplete="none"
+                                    autoComplete="new-false"
                                     onChange={(e) => setRegisterEmail(e.target.value)}
                                     id="registerInput"
                                 />
@@ -90,7 +90,7 @@ const Auth = (props: any) => {
                             <div className="auth__form__input">
                                 <input
                                     type="password" required
-                                    autoComplete="none"
+                                    autoComplete="new-false"
                                     onChange={(e) => setRegisterPassword(e.target.value)}
                                     id="registerInput"
                                 />
@@ -99,7 +99,7 @@ const Auth = (props: any) => {
                             <div className="auth__form__input">
                                 <input
                                     type="text" required
-                                    autoComplete="none"
+                                    autoComplete="new-false"
                                     onChange={(e) => setRegisterName(e.target.value)}
                                     id="registerInput"
                                 />
@@ -115,7 +115,7 @@ const Auth = (props: any) => {
                         <div>
                             <div className="auth__form__input">
                                 <input
-                                    type="email" required autoComplete="false"
+                                    type="email" required autoComplete="new-false"
                                     onChange={(e) => setLoginEmail(e.target.value)}
                                 />
                                 <label>Email</label>
@@ -123,7 +123,7 @@ const Auth = (props: any) => {
                             <div className="auth__form__input" >
                                 <input
                                     type="password" required
-                                    autoComplete="none"
+                                    autoComplete="new-false"
                                     onChange={(e) => setLoginPassword(e.target.value)}
                                 />
                                 <label>Password</label>
@@ -131,7 +131,7 @@ const Auth = (props: any) => {
                             <div className="auth__form__input">
                                 <input
                                     type="text" required
-                                    autoComplete="on"
+                                    autoComplete="new-false"
                                     onChange={(e) => setLoginName(e.target.value)}
                                 />
                                 <label>Name</label>
