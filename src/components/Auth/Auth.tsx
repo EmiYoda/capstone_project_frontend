@@ -37,7 +37,7 @@ const Auth = (props: any) => {
             })
             setToken(call.data.token);
             const expires = (new Date(Date.now() + 86400 * 1000)).toUTCString();
-            document.cookie = `token=${token}; secure=true; samesite=lax; max-age=${expires + 86400}; http-only=true`;
+            document.cookie = `token=${token}; secure=true; samesite=lax; max-age=${expires + 864000}; http-only=true`;
 
             alert("User Created Please Login")
             window.location.reload();
@@ -59,8 +59,8 @@ const Auth = (props: any) => {
                 url: "https://photodb-backend-capstone.herokuapp.com/api/login"
             })
             setToken(call.data.token);
-            const expires = (new Date(Date.now() + 86400 * 1000)).toUTCString();
-            document.cookie = `token=${token}; secure=true; samesite=lax; max-age=${expires + 86400}; http-only=true`;
+            const expires = (new Date(Date.now() + 864000 * 1000)).toUTCString();
+            document.cookie = `token=${token}; secure=true; samesite=lax; expires=${expires}; http-only=true`;
             redirect()
         } catch (error) {
             console.log(error)
