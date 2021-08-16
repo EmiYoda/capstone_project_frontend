@@ -73,7 +73,7 @@ const Auth = (props: any) => {
         <div className="auth">
             <h3 className={isSignup ? "auth__option" : "active"} onClick={() => setIsSignup(false)} >Log In</h3>
             <h3 className={isSignup ? "active" : "auth__option"} onClick={() => setIsSignup(true)}>Register</h3>
-            <form autoComplete="off" className="auth__form">
+            <form autoComplete="new-false" className="auth__form">
                 <h2>{isSignup ? "Register" : "Login"}</h2>
                 {
                     isSignup ?
