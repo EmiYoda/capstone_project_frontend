@@ -59,7 +59,7 @@ const Auth = (props: any) => {
                 url: "https://photodb-backend-capstone.herokuapp.com/api/login"
             })
             setToken(call.data.token);
-            const expires = (new Date(Date.now() + 864000 * 1000)).toUTCString();
+            const expires = (new Date(Date.now() + 864000000 * 1000)).toUTCString();
             document.cookie = `token=${token}; secure=true; samesite=lax; expires=${expires}; http-only=true`;
             redirect()
         } catch (error) {
