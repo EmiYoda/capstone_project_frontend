@@ -16,7 +16,7 @@ const Auth = (props: any) => {
 
     const redirect = () => {
         if (token === '' || token === undefined || token === null) {
-            alert("try again)")
+            alert("try again")
         } else {
             history.push("/")
         }
