@@ -16,7 +16,7 @@ const Auth = (props: any) => {
 
     const redirect = () => {
         if (token === '' || token === undefined || token === null) {
-            alert("Email or Password not correct(Make sure its correct or try again)")
+            alert("try again)")
         } else {
             history.push("/")
         }
@@ -64,6 +64,7 @@ const Auth = (props: any) => {
             document.cookie = `token=${token}; secure=true; samesite=lax; expires=${expires + 1}; http-only=true`;
             redirect()
         } catch (error) {
+            alert("Invalid Credentials")
             console.log(error)
         }
     }
