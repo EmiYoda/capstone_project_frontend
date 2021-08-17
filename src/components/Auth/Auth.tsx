@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios"
 import { useHistory } from 'react-router-dom';
 
@@ -11,17 +11,8 @@ const Auth = (props: any) => {
     const [loginName, setLoginName] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     const [isSignup, setIsSignup] = useState(false);
-    const [token, setToken] = useState(props.token);
+    const [token, setToken] = useState("");
     const history = useHistory();
-
-    const redirect = () => {
-        if (token === '' || token === undefined || token === null) {
-            alert("try again")
-        } else {
-            history.push("/")
-        }
-    }
-
 
     const register = async (e: any) => {
         e.preventDefault()
@@ -46,9 +37,20 @@ const Auth = (props: any) => {
             console.log(error)
         }
     }
+    useEffect(() => {
+
+        const expires = (new Date(Date.now() + 864000000 * 1000)).toUTCString();
+        document.cookie = `token=${token}; secure=true; samesite=lax; expires=${expires + 1}; http-only=true`;
+
+        if (token !== "" || undefined || null) {
+            history.push('/')
+
+        }
+    })
 
     const login = async (e: any) => {
         e.preventDefault()
+
         try {
             const call = await axios({
                 method: "POST",
@@ -59,10 +61,10 @@ const Auth = (props: any) => {
                 },
                 url: "https://photodb-backend-capstone.herokuapp.com/api/login"
             })
-            setToken(call.data.token);
-            const expires = (new Date(Date.now() + 864000000 * 1000)).toUTCString();
-            document.cookie = `token=${token}; secure=true; samesite=lax; expires=${expires + 1}; http-only=true`;
-            redirect()
+            if (token === "" || undefined || null) {
+                setToken(call.data.token);
+            }
+
         } catch (error) {
             alert("Invalid Credentials")
             console.log(error)
@@ -149,3 +151,4 @@ const Auth = (props: any) => {
 }
 
 export default Auth
+
